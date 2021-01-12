@@ -15,7 +15,19 @@ class AksStack : Stack
     var config = new Pulumi.Config();
     var kubernetesVersion = config.Get("kubernetesVersion") ?? "1.19.1";
 
-    var resourceGroup = new ResourceGroup("aks")
-    }
+    var resourceGroup = new ResourceGroup("aks");
 
+    var password = new RandomPassword("password", new RandomPasswordArgs
+    {
+      Length = 20,
+    }).Result;
+
+    var sshPublicKey = new PrivateKey("ssh-key", new PrivateKeyArgs
+    {
+      Algorithm = "RSA",
+      RsaBits = 4096,
+    }).PublicKeyOpenssh;
+
+
+  }
 }
