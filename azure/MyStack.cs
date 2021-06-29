@@ -21,10 +21,9 @@ class MyStack : Stack
             }
     });
 
-    var aks = new AksStack();
-
-    // Export the connection string for the storage account
     this.ConnectionString = storageAccount.PrimaryConnectionString;
+    // Export the connection string for the storage account
+
   }
 
   [Output]
