@@ -1,0 +1,6 @@
+config:
+  azure:location: WestEurope
+  pulumi:template: azure-csharp
+  kubernetesVersion:
+    description: The Kubernetes version to deploy
+    default: 1.21.1
