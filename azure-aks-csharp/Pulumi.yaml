@@ -1,0 +1,8 @@
+name: azure-aks-csharp
+runtime: dotnet
+description: Azure Native C# Pulumi example featuring Helm chart deployment to AKS
+template:
+  config:
+    azure:location:
+      description: the azure location to use
+      default: westeurope
